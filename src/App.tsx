@@ -1,54 +1,27 @@
-import { Navigation } from './components/Navigation';
-import { BackToTop } from './components/BackToTop';
-import { useActiveSection } from './lib/useActiveSection';
-import { Hero } from './components/Hero';
-import { MissionTicker } from './components/MissionTicker';
-import { Problem } from './components/Problem';
-import { Technology } from './components/Technology';
-import { HowItWorks } from './components/HowItWorks';
-import { CompetitiveAdvantage } from './components/CompetitiveAdvantage';
-import { Applications } from './components/Applications';
-import { Impact } from './components/Impact';
-import { Roadmap } from './components/Roadmap';
-import { Market } from './components/Market';
-import { Commercialization } from './components/Commercialization';
-import { Team } from './components/Team';
-import { About } from './components/About';
-import { CTA } from './components/CTA';
-import { Footer } from './components/Footer';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './components/Layout';
+import Home from './pages/Home';
+import TechnologyPage from './pages/TechnologyPage';
+import ApplicationsPage from './pages/ApplicationsPage';
+import RoadmapPage from './pages/RoadmapPage';
+import TeamPage from './pages/TeamPage';
+import ContactPage from './pages/ContactPage';
+import MissionPage from './pages/MissionPage';
+import NotFound from './pages/NotFound';
 
-function App() {
-  const active = useActiveSection();
-
+export default function App() {
   return (
-    <div className="bg-void">
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-signal focus:px-4 focus:py-2 focus:text-sm focus:text-bone"
-      >
-        Skip to content
-      </a>
-      <Navigation active={active} />
-      <BackToTop />
-      <main id="main">
-        <Hero />
-        <MissionTicker />
-        <Problem />
-        <Technology />
-        <HowItWorks />
-        <CompetitiveAdvantage />
-        <Applications />
-        <Impact />
-        <Roadmap />
-        <Market />
-        <Commercialization />
-        <Team />
-        <About />
-        <CTA />
-      </main>
-      <Footer />
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="technology" element={<TechnologyPage />} />
+        <Route path="applications" element={<ApplicationsPage />} />
+        <Route path="roadmap" element={<RoadmapPage />} />
+        <Route path="team" element={<TeamPage />} />
+        <Route path="mission" element={<MissionPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
-
-export default App;

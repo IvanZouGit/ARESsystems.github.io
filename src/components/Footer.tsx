@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logoMark from '../assets/logo-mark.png';
 
 function LinkedinIcon({ size = 14 }: { size?: number }) {
@@ -29,10 +30,12 @@ function XIcon({ size = 14 }: { size?: number }) {
 }
 
 const LINKS = [
-  { label: 'Technology', href: '#technology' },
-  { label: 'Applications', href: '#applications' },
-  { label: 'Team', href: '#team' },
-  { label: 'Contact', href: '#demo' },
+  { label: 'Mission', href: '/mission' },
+  { label: 'Technology', href: '/technology' },
+  { label: 'Applications', href: '/applications' },
+  { label: 'Roadmap', href: '/roadmap' },
+  { label: 'Team', href: '/team' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 // TODO: replace with your real profile URLs
@@ -50,8 +53,8 @@ const LEGAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-line px-6 py-12 md:px-12 lg:px-20 xl:px-24">
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-8 md:flex-row md:items-start md:justify-between">
+    <footer className="border-t border-line py-12">
+      <div className="site-container flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
         <div>
           <div className="flex items-center gap-2.5">
             <img src={logoMark} alt="" className="h-[18px] w-auto" aria-hidden="true" />
@@ -66,19 +69,20 @@ export function Footer() {
           <ul className="flex flex-wrap gap-x-8 gap-y-3">
             {LINKS.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
                   className="text-sm text-mist transition-colors duration-150 hover:text-bone"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-[1440px] flex-col gap-6 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="site-container mt-10">
+        <div className="flex flex-col gap-6 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="font-mono text-[11px] text-steel">© 2026 ARES Systems</p>
 
         <div className="flex flex-wrap items-center gap-x-7 gap-y-4">
@@ -109,6 +113,11 @@ export function Footer() {
             ))}
           </ul>
         </div>
+        </div>
+        <p className="mt-6 text-[11px] leading-relaxed text-steel">
+          Photographs are illustrative stock images from Pexels and do not depict ARES hardware or
+          deployments.
+        </p>
       </div>
     </footer>
   );

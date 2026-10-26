@@ -15,8 +15,9 @@ export function BackToTop() {
   return (
     <AnimatePresence>
       {show && (
-        <motion.a
-          href="#top"
+        <motion.button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Back to top"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,7 +26,7 @@ export function BackToTop() {
           className="fixed bottom-5 right-5 z-40 flex h-11 w-11 items-center justify-center border border-line-bright bg-void/90 text-bone transition-colors hover:border-signal hover:text-signal-bright md:bottom-6 md:right-6"
         >
           <ArrowUp size={18} />
-        </motion.a>
+        </motion.button>
       )}
     </AnimatePresence>
   );

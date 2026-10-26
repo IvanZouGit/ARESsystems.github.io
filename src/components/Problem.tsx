@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { LayoutGrid, UserCog, ShieldAlert } from 'lucide-react';
 import { SectionShell, Label } from '../lib/ui';
+import { Photo } from './Photo';
 
 const CARDS = [
   {
@@ -37,6 +38,7 @@ export function Problem() {
             critical decisions with incomplete information. The environments they need to
             understand can be too large, dangerous, or unpredictable for immediate human access.
           </p>
+          <Photo name="firefighters" width={900} className="mt-8 aspect-[4/3] max-w-md" />
         </div>
 
         <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">

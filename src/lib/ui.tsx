@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 export function CornerBrackets({ className = '' }: { className?: string }) {
   const arm = 'absolute h-[14px] w-[14px] border-signal/70';
@@ -36,15 +37,15 @@ export function SectionShell({
   className?: string;
 }) {
   return (
-    <section id={id} className={`relative py-24 md:py-32 px-6 md:px-12 lg:px-20 xl:px-24 ${className}`}>
-      <div className="mx-auto max-w-[1440px]">{children}</div>
+    <section id={id} className={`relative py-16 md:py-24 lg:py-28 ${className}`}>
+      <div className="site-container">{children}</div>
     </section>
   );
 }
 
 export function PrimaryButton({
   children,
-  href = '#demo',
+  href = '/contact',
   onClick,
   type = 'button',
   className = '',
@@ -64,11 +65,7 @@ export function PrimaryButton({
       </button>
     );
   }
-  return (
-    <a href={href} className={`${base} ${className}`}>
-      {children}
-    </a>
-  );
+  return <SmartLink href={href} className={`${base} ${className}`}>{children}</SmartLink>;
 }
 
 export function SecondaryButton({
@@ -91,8 +88,28 @@ export function SecondaryButton({
       </button>
     );
   }
+  return <SmartLink href={href} className={`${base} ${className}`}>{children}</SmartLink>;
+}
+
+/** Internal paths ("/team") use the router (no page reload); mailto:, http(s): and #anchors stay plain links. */
+export function SmartLink({
+  href = '#',
+  className,
+  children,
+}: {
+  href?: string;
+  className?: string;
+  children: ReactNode;
+}) {
+  if (href.startsWith('/')) {
+    return (
+      <Link to={href} className={className}>
+        {children}
+      </Link>
+    );
+  }
   return (
-    <a href={href} className={`${base} ${className}`}>
+    <a href={href} className={className}>
       {children}
     </a>
   );

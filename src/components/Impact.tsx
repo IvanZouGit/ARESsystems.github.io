@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { SectionShell, Label } from '../lib/ui';
+import { Photo } from './Photo';
 
 const METRICS = [
   {
@@ -24,7 +25,9 @@ export function Impact() {
         More information. Less exposure.
       </h2>
 
-      <div className="mt-14 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-3">
+      <Photo name="grassfire" width={1600} className="mt-10 aspect-[16/9] sm:aspect-[21/9]" />
+
+      <div className="mt-10 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-3">
         {METRICS.map((m, i) => (
           <motion.div
             key={m.title}
