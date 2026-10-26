@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { PrimaryButton, SecondaryButton } from '../lib/ui';
 import logoMark from '../assets/logo-mark.png';
+import { TEAM } from '../lib/team';
+import { LinkedinIcon } from '../lib/icons';
 
 export function CTA() {
   return (
@@ -49,6 +51,33 @@ export function CTA() {
           </PrimaryButton>
           <SecondaryButton href="mailto:contact@aressystems.com">Contact ARES</SecondaryButton>
         </motion.div>
+        {        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+          className="mt-14 border-t border-line pt-8"
+        >
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-steel">
+            Connect with the founders
+          </p>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+            {TEAM.map((m) => (
+              <a
+                key={m.name}
+                href={m.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${m.name} on LinkedIn`}
+                className="flex items-center gap-3 border border-line-bright bg-surface py-2 pl-2 pr-4 text-sm text-bone transition-colors hover:border-signal"
+              >
+                <img src={m.photo} alt="" className="h-8 w-8 object-cover object-top grayscale" />
+                {m.name}
+                <LinkedinIcon size={14} />
+              </a>
+            ))}
+          </div>
+        </motion.div>}
       </div>
     </section>
   );

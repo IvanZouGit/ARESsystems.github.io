@@ -112,28 +112,17 @@ export function Navigation({ active }: { active: string }) {
             className="max-h-[calc(100dvh-60px)] overflow-y-auto border-t border-line bg-void lg:hidden"
           >
             <ul className="px-6 py-3">
-              {SECTIONS.filter((s) => s.id !== 'top' && s.id !== 'demo').map((s, i) => {
-                const isActive = s.id === active;
-                return (
-                  <li key={s.id} className="border-b border-line last:border-b-0">
-                    <a
-                      href={`#${s.id}`}
-                      onClick={() => setOpen(false)}
-                      aria-current={isActive ? 'true' : undefined}
-                      className={`flex items-center gap-4 py-3.5 text-[15px] transition-colors ${
-                        isActive ? 'text-bone' : 'text-mist hover:text-bone'
-                      }`}
-                    >
-                      <span
-                        className={`font-mono text-[11px] ${isActive ? 'text-signal-bright' : 'text-steel'}`}
-                      >
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      {s.label}
-                    </a>
-                  </li>
-                );
-              })}
+              {NAV_LINKS.map((link) => (
+                <li key={link.href} className="border-b border-line last:border-b-0">
+                  <a
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="block py-4 text-[17px] text-mist hover:text-bone"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
             <div className="px-6 pb-6 pt-2">
               <a

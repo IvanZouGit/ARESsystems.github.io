@@ -23,10 +23,7 @@ export const SECTIONS: SectionDef[] = [
 
 /** Links shown in the top bar. `group` matches SectionDef.group. */
 export const NAV_LINKS = [
-  { label: 'Problem', href: '#problem', group: 'problem' },
   { label: 'Technology', href: '#technology', group: 'technology' },
   { label: 'Applications', href: '#applications', group: 'applications' },
-  { label: 'Impact', href: '#impact', group: 'impact' },
-  { label: 'Roadmap', href: '#roadmap', group: 'roadmap' },
-  { label: 'Team', href: '#team', group: 'team' },
+  { label: 'Company', href: '#team', group: 'company' },
 ];

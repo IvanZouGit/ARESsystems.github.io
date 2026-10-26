@@ -1,5 +1,4 @@
 import { Navigation } from './components/Navigation';
-import { SectionRail } from './components/SectionRail';
 import { BackToTop } from './components/BackToTop';
 import { useActiveSection } from './lib/useActiveSection';
 import { Hero } from './components/Hero';
@@ -30,7 +29,6 @@ function App() {
         Skip to content
       </a>
       <Navigation active={active} />
-      <SectionRail active={active} />
       <BackToTop />
       <main id="main">
         <Hero />
