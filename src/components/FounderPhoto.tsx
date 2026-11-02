@@ -13,7 +13,7 @@ export function FounderPhoto({ className = '' }: { className?: string }) {
     <figure className={`relative overflow-hidden border border-line bg-surface ${className}`}>
       {!missing ? (
         <img
-          src="/images/founders.jpg"
+          src="/images/ares-founders.png"
           alt="Ivan Zou and Jake Claybrook, co-founders of ARES Systems"
           onError={() => setMissing(true)}
           className="h-full w-full object-cover"

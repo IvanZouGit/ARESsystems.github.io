@@ -40,7 +40,7 @@ const LINKS = [
 
 // TODO: replace with your real profile URLs
 const SOCIAL_LINKS = [
-  { label: 'LinkedIn', href: '#', icon: LinkedinIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/aressystems/', icon: LinkedinIcon },
   { label: 'Instagram', href: '#', icon: InstagramIcon },
   { label: 'X', href: '#', icon: XIcon },
 ];

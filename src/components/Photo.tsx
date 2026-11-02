@@ -30,11 +30,6 @@ export function Photo({ name, width = 1000, className = '', imgClassName = '', t
         />
       )}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/70 via-void/10 to-transparent" />
-      {tag && !failed && (
-        <figcaption className="absolute bottom-2.5 left-3 font-mono text-[9px] uppercase tracking-[0.16em] text-mist/80">
-          Illustrative image
-        </figcaption>
-      )}
     </figure>
   );
 }
