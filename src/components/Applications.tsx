@@ -52,7 +52,6 @@ export function Applications() {
             <Photo
               name={app.image}
               width={900}
-              tag={false}
               className="aspect-[16/10] border-0 border-b"
               imgClassName="transition-transform duration-700 group-hover:scale-[1.04]"
             />

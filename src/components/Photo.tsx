@@ -8,12 +8,11 @@ interface Props {
   className?: string;
   imgClassName?: string;
   /** show the small "Illustrative image" tag */
-  tag?: boolean;
   eager?: boolean;
 }
 
 /** Photo frame: lazy-loaded, dark-tinted to sit in the theme, and degrades to the grid background if the image can't load. */
-export function Photo({ name, width = 1000, className = '', imgClassName = '', tag = true, eager = false }: Props) {
+export function Photo({ name, width = 1000, className = '', imgClassName = '', eager = false }: Props) {
   const [failed, setFailed] = useState(false);
   const { src, alt } = photo(name, width);
 
