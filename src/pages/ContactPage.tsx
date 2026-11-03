@@ -6,7 +6,7 @@ import { LinkedinIcon } from '../lib/icons';
 import { TEAM } from '../lib/team';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
 
-const EMAIL = 'contact@aressystems.com'; // TODO: your real address
+const EMAIL = 'aressystems.us@gmail.com'; 
 
 const WHO = [
   'First responders',
