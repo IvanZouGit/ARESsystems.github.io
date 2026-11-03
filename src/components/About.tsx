@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import { SectionShell, Label } from '../lib/ui';
+import { Photo } from './Photo';
 
 export function About() {
   return (
     <SectionShell id="about" className="border-t border-line">
-      <div className="grid gap-10 lg:grid-cols-[0.6fr_1fr] lg:items-start">
-        <Label>Mission</Label>
-
+      <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:gap-14">
         <div className="space-y-8">
+          <Label>Mission</Label>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -29,6 +29,7 @@ export function About() {
             humans working with robots.
           </motion.p>
         </div>
+        <Photo name="firefightersNight" width={1000} className="aspect-[4/3]" />
       </div>
     </SectionShell>
   );

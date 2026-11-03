@@ -1,22 +1,7 @@
 import { motion } from 'framer-motion';
 import { SectionShell, Label, CornerBrackets } from '../lib/ui';
-import ivanPhoto from '../assets/ivan-zou.jpg';
-import jakePhoto from '../assets/jake-claybrook.jpg';
-
-const TEAM = [
-  {
-    photo: ivanPhoto,
-    name: 'Ivan Zou',
-    role: 'Co-Founder / Robotics & Systems Lead',
-    bio: 'Electrical & Computer Engineering + Robotics Engineering student at Worcester Polytechnic Institute. Experience in autonomous robotics, embedded systems, programming, electrical design, and system integration.',
-  },
-  {
-    photo: jakePhoto,
-    name: 'Jake Claybrook',
-    role: 'Co-Founder / Engineering Lead',
-    bio: 'Robotics Engineering student at Worcester Polytechnic Institute. Focused on robotic prototyping, testing, and system development.',
-  },
-];
+import { TEAM } from '../lib/team';
+import { LinkedinIcon } from '../lib/icons';
 
 export function Team() {
   return (
@@ -51,6 +36,15 @@ export function Team() {
                 {member.role}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-mist">{member.bio}</p>
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${member.name} on LinkedIn`}
+                className="mt-4 inline-flex items-center gap-2 border border-line-bright px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-mist transition-colors hover:border-signal hover:text-bone"
+              >
+                <LinkedinIcon /> LinkedIn
+              </a>
             </div>
           </motion.div>
         ))}
